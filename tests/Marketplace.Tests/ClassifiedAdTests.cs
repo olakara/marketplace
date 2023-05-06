@@ -10,7 +10,7 @@ public class ClassifiedAdTests
     {
         Assert.Throws<ArgumentException>(() =>
         {
-            var ad = new ClassifiedAd(Guid.Empty);
+            var ad = new ClassifiedAd(Guid.Empty, Guid.Empty);
         });
     }
     
@@ -19,7 +19,7 @@ public class ClassifiedAdTests
     {
         
         var guid = Guid.NewGuid();
-        var ad = new ClassifiedAd(guid);
+        var ad = new ClassifiedAd(guid, Guid.NewGuid());
         ad.Should().NotBeNull();
         ad.Id.Should().Be(guid);
 
