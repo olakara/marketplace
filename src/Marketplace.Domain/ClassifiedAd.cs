@@ -4,7 +4,7 @@ public class ClassifiedAd
 {
     public readonly Guid Id; // { get; private set; }
 
-    public ClassifiedAd(Guid id, Guid ownerId)
+    public ClassifiedAd(Guid id, UserId ownerId)
     {
         if (id == default)
             throw new ArgumentException("Identity must be specified", nameof(id));
@@ -21,7 +21,7 @@ public class ClassifiedAd
 
     public void UpdatePrice(decimal price) => _price = price;
 
-    private Guid _ownerId;
+    private UserId _ownerId;
     private string _title;
     private string _text;
     private decimal _price;
